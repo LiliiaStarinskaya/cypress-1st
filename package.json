@@ -1,0 +1,21 @@
+{
+  "name": "cypress-1st",
+  "version": "1.0.0",
+  "description": "firts cypress tests",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "LiliiaStarinskaya"
+  },
+  "keywords": [
+    "cypress"
+  ],
+  "author": "liliastarinskaya",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.7.0"
+  }
+}
