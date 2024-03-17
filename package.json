@@ -6,8 +6,9 @@
   "scripts": {
     "cy:open": "npx cypress open",
     "cy:run": "npx cypress run",
-    "cy:dashboard":"npx cypress run --record --key 8fb2330b-2726-43e9-a29a-c726d257fca"
-  },
+    "cy:dashboard":"npx cypress run --record --key 8fb2330b-2726-43e9-a29a-c726d257fca4",
+    "cy:dashboard:staging": "npx cypress run --record --key 4b647d20-606b-4871-847b-60a3a027f3b4 --config-file cypress2.config.js"
+  }, 
   "repository": {
     "type": "git",
     "url": "LiliiaStarinskaya"
