@@ -7,7 +7,11 @@
     "cy:open": "npx cypress open",
     "cy:run": "npx cypress run",
     "cy:dashboard":"npx cypress run --record --key 8fb2330b-2726-43e9-a29a-c726d257fca4",
-    "cy:dashboard:staging": "npx cypress run --record --key 4b647d20-606b-4871-847b-60a3a027f3b4 --config-file cypress2.config.js"
+    "cy:dashboard:staging": "npx cypress run --record --key 4b647d20-606b-4871-847b-60a3a027f3b4 --config-file cypress2.config.js",
+    "cy:run:local:first": "npx cypress run --browser chrome --spec 'cypress/e2e/verifier.cy.js' --config-file cypress.config.js",
+    "cy:run:local:second":"npx cypress run --browser electron --spec 'cypress/e2e/verifier2.cy.js' --config-file cypress2.config.js",
+    "cy:run:all:dashboard": "npm run cy:run:local:first && npm run cy:run:local:second && npx cypress run --record  --key 8fb2330b-2726-43e9-a29a-c726d257fca4 --key 4b647d20-606b-4871-847b-60a3a027f3b4"
+
   }, 
   "repository": {
     "type": "git",
