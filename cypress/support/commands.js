@@ -23,3 +23,22 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+Cypress.Commands.add("login", () => {
+  cy.contains("span", "Account").click();
+  cy.contains("span", "Sign in").click();
+  cy.get('[data-cy="username"]').click().type("user_student");
+  cy.get('[data-cy="password"]').click().type("user");
+  cy.get('[data-cy="submit"]').click();
+});
+
+Cypress.Commands.add("navigateTo", (text) => {
+  cy.contains("span", text).should("exist").click();
+});
+
+Cypress.Commands.add("clickButton", (text) => {
+  cy.contains("span", text).should("exist").click();
+});
+
+Cypress.Commands.add("verifyUrlContains", (urlPart) => {
+  cy.url().should("include", urlPart);
+});
