@@ -1,7 +1,7 @@
 describe("check", () => {
   const baseUrl = Cypress.config("baseUrl");
 
-  before(() => {
+  beforeEach(() => {
     cy.visit(baseUrl);
     cy.login();
   });
