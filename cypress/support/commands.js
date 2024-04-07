@@ -23,15 +23,11 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-Cypress.Commands.add("login", () => {
-  cy.readFile("cypress/support/credentials.json").then((credentials) => {
-    const { username, password } = credentials;
-    cy.contains("span", "Account").click();
-    cy.contains("span", "Sign in").click();
-    cy.get('[data-cy="username"]').click().type(username);
-    cy.get('[data-cy="password"]').click().type(password);
-    cy.get('[data-cy="submit"]').click();
-  });
+Cypress.Commands.add("login", (username, password) => {
+  cy.visit("/login");
+  cy.get("#username").type(username);
+  cy.get("#password").type(password);
+  cy.get('[data-cy="submit"]').click();
 });
 
 Cypress.Commands.add("navigateTo", (text) => {
@@ -44,4 +40,33 @@ Cypress.Commands.add("clickButton", (text) => {
 
 Cypress.Commands.add("verifyUrlContains", (urlPart) => {
   cy.url().should("include", urlPart);
+});
+
+Cypress.Commands.add(
+  "registerUser",
+  (username, email, password, confirmPassword) => {
+    cy.visit("/account/register");
+
+    cy.get('[data-cy= "username"]').type(username);
+    cy.get('[data-cy="email"]').type(email);
+    cy.get('[data-cy="firstPassword"]').type(password);
+    cy.get('[data-cy="secondPassword"]').type(confirmPassword);
+    cy.get('[data-cy="submit"]').click();
+  }
+);
+
+const selectorsForClear = {
+  usernameField: '[data-cy="username"]',
+  emailField: '[data-cy="email"]',
+  passwordField: '[data-cy="firstPassword"]',
+  confirmPasswordField: '[data-cy="secondPassword"]',
+  errorAlert: ".invalid-feedback",
+};
+
+Cypress.Commands.add("clearRegistrationForm", () => {
+  Object.values(selectorsForClear).forEach((selector) => {
+    if (selector !== selectorsForClear.errorAlert) {
+      cy.get(selector).clear();
+    }
+  });
 });

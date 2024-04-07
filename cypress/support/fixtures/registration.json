@@ -1,0 +1,74 @@
+[
+   
+    {
+      "username": "@~",
+      "email": "test@mail.com",
+      "firstPassword": "3333",
+      "secondPassword": "3333"
+    },
+    {
+        "username": "",
+        "email": "test@mail.com",
+        "firstPassword": "3333",
+        "secondPassword": "3333"
+      },
+    {
+
+      "username": "test",
+      "email": "testmail.com",
+      "firstPassword": "3333",
+      "secondPassword": "3333"
+    }
+    ,
+    {
+
+      "username": "test",
+      "email": "1",
+      "firstPassword": "3333",
+      "secondPassword": "3333"
+    },
+    {"username": "test",
+    "email": "",
+    "firstPassword": "3333",
+    "secondPassword": "3333"
+
+    },
+    {"username": "test",
+    "email": "test@mail.com",
+    "firstPassword": "333",
+    "secondPassword": "3333"
+
+    },
+    {"username": "test",
+    "email": "test@mail.com",
+    "firstPassword": "333333333333333333333333333333333333333333333333333",
+    "secondPassword": "3333"
+
+    },
+    {"username": "test",
+    "email": "test@mail.com",
+    "firstPassword": "",
+    "secondPassword": "3333"
+
+    },
+    {"username": "test",
+    "email": "test@mail.com",
+    "firstPassword": "3333",
+    "secondPassword": "333"
+
+    }, 
+    {"username": "test",
+    "email": "test@mail.com",
+    "firstPassword": "3333",
+    "secondPassword": "333333333333333333333333333333333333333333333333333"
+
+    },
+    
+    {"username": "test",
+    "email": "test@mail.com",
+    "firstPassword": "3333",
+    "secondPassword": ""
+
+    }
+  ]
+  
