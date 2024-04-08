@@ -6,20 +6,45 @@
       "firstPassword": "3333",
       "secondPassword": "3333"
     },
-    {
-        "username": "",
-        "email": "test@mail.com",
-        "firstPassword": "3333",
-        "secondPassword": "3333"
-      },
+    
     {
 
       "username": "test",
       "email": "testmail.com",
       "firstPassword": "3333",
       "secondPassword": "3333"
-    }
-    ,
+    },
+    {"username": "test",
+    "email": "testmail.com",
+    "firstPassword": "3333",
+    "secondPassword": "3333"
+
+    },
+    {"username": "<script>alert(“XSS-атака выполнена!”); </script>",
+    "email": "testmail.com",
+    "firstPassword": "3333",
+    "secondPassword": "3333"
+        
+    },
+    {"username": "test",
+    "email": "<script>alert(“XSS-атака выполнена!”); </script>",
+    "firstPassword": "3333",
+    "secondPassword": "3333"
+
+    },
+    {"username": "test",
+    "email": "test@mail.com",
+    "firstPassword": "<script>alert(“XSS-атака выполнена!”); </script>",
+    "secondPassword": "3333"
+
+
+    },
+    {
+        "username": "test",
+        "email": "test@mail.com",
+        "firstPassword": "4444",
+        "secondPassword": "<script>alert(“XSS-атака выполнена!”); </script>"
+    },
     {
 
       "username": "test",
@@ -28,7 +53,7 @@
       "secondPassword": "3333"
     },
     {"username": "test",
-    "email": "",
+    "email": "null",
     "firstPassword": "3333",
     "secondPassword": "3333"
 
@@ -45,12 +70,9 @@
     "secondPassword": "3333"
 
     },
-    {"username": "test",
-    "email": "test@mail.com",
-    "firstPassword": "",
-    "secondPassword": "3333"
+    
 
-    },
+   
     {"username": "test",
     "email": "test@mail.com",
     "firstPassword": "3333",
@@ -67,7 +89,7 @@
     {"username": "test",
     "email": "test@mail.com",
     "firstPassword": "3333",
-    "secondPassword": ""
+    "secondPassword": "null"
 
     }
   ]

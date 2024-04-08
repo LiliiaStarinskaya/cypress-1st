@@ -9,7 +9,7 @@ describe.only("Registration Form Tests", () => {
 
   it("Register with valid data", () => {
     cy.registerUser("test", "test@mail.com", "1111", "1111");
-    cy.contains(".invalid-feedback").should("not.exist");
+    cy.get(".invalid-feedback").should("not.exist");
   });
 
   it("Unable to Register with Incorrect Credentials", () => {
@@ -20,7 +20,7 @@ describe.only("Registration Form Tests", () => {
         item.firstPassword,
         item.secondPassword
       );
-      cy.contains(".invalid-feedback").should("exist");
+      cy.get(".invalid-feedback").should("exist");
     });
   });
 });
