@@ -1,0 +1,5 @@
+{
+    "usernameField": "#username",
+    "passwordField": "#password",
+    "submitButton": "[data-cy='submit']"
+}
