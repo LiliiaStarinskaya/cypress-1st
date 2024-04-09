@@ -62,6 +62,23 @@ const selectorsForClear = {
   confirmPasswordField: '[data-cy="secondPassword"]',
   errorAlert: ".invalid-feedback",
 };
+Cypress.Commands.add("changePassword", (oldPassword, newPassword) => {
+  cy.contains("span", "Account").click();
+  cy.contains("span", "Password").click();
+  cy.get('[data-cy="currentPassword"]').type(oldPassword);
+  cy.get('[data-cy="newPassword"]').type(newPassword);
+  cy.get('[data-cy="confirmPassword"]').type(newPassword);
+  cy.get('[data-cy="submit"]').click();
+});
+
+Cypress.Commands.add("returnPassword", (oldPassword, newPassword) => {
+  cy.contains("span", "Account").click();
+  cy.contains("span", "Password").click();
+  cy.get('[data-cy="currentPassword"]').type(newPassword);
+  cy.get('[data-cy="newPassword"]').type(oldPassword);
+  cy.get('[data-cy="confirmPassword"]').type(oldPassword);
+  cy.get('[data-cy="submit"]').click();
+});
 
 Cypress.Commands.add("clearRegistrationForm", () => {
   Object.values(selectorsForClear).forEach((selector) => {
