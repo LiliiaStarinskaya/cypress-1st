@@ -6,13 +6,17 @@
   "scripts": {
     "cy:open": "npx cypress open",
     "cy:run": "npx cypress run",
-    "cy:dashboard":"npx cypress run --record --key 8fb2330b-2726-43e9-a29a-c726d257fca4",
-    "cy:dashboard:staging": "npx cypress run --record --key 4b647d20-606b-4871-847b-60a3a027f3b4 --config-file cypress2.config.js",
-    "cy:run:local:first": "npx cypress run --browser chrome --spec 'cypress/e2e/verifier.cy.js' --config-file cypress.config.js",
-    "cy:run:local:second":"npx cypress run --browser electron --spec 'cypress/e2e/verifier2.cy.js' --config-file cypress2.config.js",
-    "cy:run:all:dashboard": "npm run cy:run:local:first && npm run cy:run:local:second && npx cypress run --record  --key 8fb2330b-2726-43e9-a29a-c726d257fca4 --key 4b647d20-606b-4871-847b-60a3a027f3b4"
+    "cy:dashboard": "npx cypress run --record --key c2a60d65-0bc3-4644-a7b2-656d0c161b7f",
+    "cy:dashboard:staging": "npx cypress run --record --key c2a60d65-0bc3-4644-a7b2-656d0c161b7f --config-file cypress2.config.js",
+    "cy:run:chrome": "npx cypress run --spec 'cypress/e2e/verifier.cy.js' --config-file cypress.config.js --browser chrome && npx cypress run --spec 'cypress/e2e/verifier2.cy.js' --config-file cypress2.config.js --browser chrome",
+    "cy:run:electron": "npx cypress run --spec 'cypress/e2e/verifier.cy.js' --config-file cypress.config.js --browser electron && npx cypress run --spec 'cypress/e2e/verifier2.cy.js' --config-file cypress2.config.js --browser electron",
+    "cy:run:local:both":"npx cypress run --spec 'cypress/e2e/verifier.cy.js' --config-file cypress.config.js --browser chrome  && npx cypress run --spec 'cypress/e2e/verifier2.cy.js' --config-file cypress2.config.js --browser chrome ; npx cypress run --spec 'cypress/e2e/verifier.cy.js' --config-file cypress.config.js --browser electron  && npx cypress run --spec 'cypress/e2e/verifier2.cy.js' --config-file cypress2.config.js --browser electron",
+    "cy:run:record:chromeAndelectron": "npx cypress run --spec 'cypress/e2e/verifier.cy.js' --config-file cypress.config.js --browser chrome  --record  --key c2a60d65-0bc3-4644-a7b2-656d0c161b7f && npx cypress run --spec 'cypress/e2e/verifier2.cy.js' --config-file cypress2.config.js --browser chrome --record  --key c2a60d65-0bc3-4644-a7b2-656d0c161b7f ; npx cypress run --spec 'cypress/e2e/verifier.cy.js' --config-file cypress.config.js --browser electron --record  --key c2a60d65-0bc3-4644-a7b2-656d0c161b7f && npx cypress run --spec 'cypress/e2e/verifier2.cy.js' --config-file cypress2.config.js --browser electron --record  --key c2a60d65-0bc3-4644-a7b2-656d0c161b7f"
 
-  }, 
+  
+
+
+  },
   "repository": {
     "type": "git",
     "url": "LiliiaStarinskaya"
@@ -23,6 +27,7 @@
   "author": "liliastarinskaya",
   "license": "ISC",
   "devDependencies": {
+    "@faker-js/faker": "^8.4.1",
     "cypress": "^13.7.0"
   }
 }
