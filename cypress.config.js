@@ -8,9 +8,6 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {},
   },
 
-  // user: {
-  //   username: "testUser",
-  //   email: "test@example.com",
-  //   password: "StrongPassword123!@#",
-  // },
+  viewportWidth: 1366,
+  viewportHeight: 768,
 });
