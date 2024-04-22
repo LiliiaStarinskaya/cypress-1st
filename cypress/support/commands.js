@@ -23,11 +23,16 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
 Cypress.Commands.add("login", (username, password) => {
   cy.visit("/login");
   cy.get("#username").type(username);
   cy.get("#password").type(password);
   cy.get('[data-cy="submit"]').click();
+});
+Cypress.Commands.add("logout", () => {
+  cy.get('[data-cy="accountMenu"] > .d-flex').click();
+  cy.get('[data-cy="logout"]').click();
 });
 
 Cypress.Commands.add("navigateTo", (text) => {
@@ -72,7 +77,7 @@ Cypress.Commands.add("changePassword", (oldPassword, newPassword) => {
 });
 
 Cypress.Commands.add("returnPassword", (oldPassword, newPassword) => {
-  cy.contains("span", "Account").click();
+  cy.contains("span", "Account").click({ force: true });
   cy.contains("span", "Password").click();
   cy.get('[data-cy="currentPassword"]').type(newPassword);
   cy.get('[data-cy="newPassword"]').type(oldPassword);

@@ -13,7 +13,7 @@ describe.only("New", () => {
   });
 
   it("New user is able to save a new password", () => {
-    loginPage.login("test_cypress5", oldPassword);
+    loginPage.login("cover20", oldPassword);
     cy.changePassword(oldPassword, newPassword);
     cy.contains("span", "Account").click({ force: true });
     cy.contains("span", "Sign out").click();
@@ -21,12 +21,13 @@ describe.only("New", () => {
 
   it("New user is unable to login with an old password", () => {
     let loginPage = new LoginPage();
-    loginPage.login("test_cypress5", oldPassword);
+    loginPage.login("cover20", oldPassword);
     cy.contains(
       "Failed to sign in! Please check your credentials and try again."
     ).should("exist");
     cy.get("#password").clear().type(newPassword);
     cy.get('[data-cy="submit"]').click();
     cy.returnPassword(oldPassword, newPassword);
+    cy.logout();
   });
 });
